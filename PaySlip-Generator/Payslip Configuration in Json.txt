@@ -1,0 +1,13 @@
+{
+            "AsanifyPageUrl": "https://secure.asanify.com/tools/payslip-generator/",
+            "SheetName":"Aug-2022",
+            "PortNumber":"465",
+            "EmailServer":"smtp.gmail.com",
+            "InputExcelFilePath":"Payslip-InputExcel.xlsx",
+            "PayslipFolderName":"Payslip_files",
+            "QueueName":"PaySlip_Details",
+            "AssestName":"PaySlip_MailCreds",
+            "MailBody1":"Please find the attached payslip for the month of",
+            "MailBody2":"Regards",
+            "MailBody3":"HR TEAM"
+}

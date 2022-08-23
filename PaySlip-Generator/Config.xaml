@@ -1,0 +1,379 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Loading_Input_File" this:Loading_Input_File.in_inputExcelFilePath="[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+&quot;\&quot;+&quot;Payslip-InputExcel.xlsx&quot;]" this:Loading_Input_File.in_sheetName="Jul-2022" this:Loading_Input_File.in_queueName="PaySlip_Details" this:Loading_Input_File.in_storageBucketName="Payslip" this:Loading_Input_File.in_PayslipExcelFilePath="Payslip-InputExcel.xlsx" this:Loading_Input_File.in_fileNameLocation="[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+&quot;\&quot;+&quot;Payslip-InputExcel.xlsx&quot;]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_inputExcelFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_sheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_queueName" Type="InArgument(x:String)" />
+    <x:Property Name="in_storageBucketName" Type="InArgument(x:String)" />
+    <x:Property Name="in_PayslipExcelFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_fileNameLocation" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1179,2306</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Loading_Input_File_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Loading Employee details excel file containing payslip details to the queue for performing payslip generation process." DisplayName="Loading_Input_File - Sequence" sap:VirtualizedContainerService.HintSize="1189,2241" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_reference" />
+      <Variable x:TypeArguments="x:String" Name="str_monthLower" />
+      <Variable x:TypeArguments="x:String" Name="str_refMonth" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Starting Loading_Input_File seq - Log Message" sap:VirtualizedContainerService.HintSize="1147,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started loading input file sequence.&quot;]" />
+    <TryCatch DisplayName="Loading_Input_File - Try Catch" sap:VirtualizedContainerService.HintSize="1147,1856" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="Loading Employee details excel file containing payslip details to the queue for performing payslip generation process." DisplayName="Loading_Input_File" sap:VirtualizedContainerService.HintSize="1109,1629" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_inputEmployeeDataTable" />
+            <Variable x:TypeArguments="x:Int32" Name="int_columnCount" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ucas:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[in_fileNameLocation]" DisplayName="Input excel file - Download Storage File" sap:VirtualizedContainerService.HintSize="1067,132" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="[in_PayslipExcelFilePath]" StorageBucketName="[in_storageBucketName]" />
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_inputEmployeeDataTable]" DisplayName="Reading employee details file - Read Range" sap:VirtualizedContainerService.HintSize="1067,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[in_sheetName]" WorkbookPath="[in_inputExcelFilePath]" />
+          <Assign DisplayName="Input column count - Assign" sap:VirtualizedContainerService.HintSize="1067,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[int_columnCount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[dt_inputEmployeeDataTable.Columns.Count - 1]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Checking for input field whether empty or not." DataTable="[dt_inputEmployeeDataTable]" DisplayName="Input fields missing or not - For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1067,93" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence sap2010:Annotation.AnnotationText="Verifing missing fields sequence." DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,274" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[int_columnCount &gt;= 0]" DisplayName="Checking for missing fields loop - While" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[string.IsNullOrEmpty(CurrentRow(int_columnCount).ToString)]" DisplayName="Checking for missing fields - If" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="Empty field - Sequence" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw DisplayName="Missing input fields - Throw" Exception="[New BusinessRuleException(&quot;One or more input fields are empty. Please check the input file and update it.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <Assign DisplayName="Decrementing coulmn count - Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[int_columnCount]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[int_columnCount - 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InterruptibleWhile>
+                  <Assign DisplayName="Initializing Input column count - Assign" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[int_columnCount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[dt_inputEmployeeDataTable.Columns.Count - 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterating input fields to add the employee details to queue." DataTable="[dt_inputEmployeeDataTable]" DisplayName="Iterating the input dt - For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1067,843" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence sap2010:Annotation.AnnotationText="Adding employee details from input datatable to queue using add queue item activity." DisplayName="Body" sap:VirtualizedContainerService.HintSize="1033,697" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[CurrentRow(&quot;MONTH&quot;).ToString.Length = 3]" sap:VirtualizedContainerService.HintSize="991,412" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence DisplayName="3 Letter format - Sequence" sap:VirtualizedContainerService.HintSize="473,223" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[str_monthLower]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[CurrentRow("MONTH").ToString.ToLower]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[str_refMonth]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[str_monthLower.Substring(0,1).ToUpper+str_monthLower.Substring(1)]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Full name format - Sequence" sap:VirtualizedContainerService.HintSize="473,254" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="str_month1stLetterUpper" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[str_monthLower]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[CurrentRow("MONTH").ToString.ToLower]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[str_month1stLetterUpper]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[str_monthLower.Substring(0,1).ToUpper+str_monthLower.Substring(1)]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">[str_refMonth]</OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">[str_month1stLetterUpper.Substring(0,3)]</InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Assign DisplayName="Assigning reference to the queue - Assign" sap:VirtualizedContainerService.HintSize="991,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_reference]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[str_refMonth+"-"+CurrentRow("YEAR").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Employee Details - Add Queue Item" sap:VirtualizedContainerService.HintSize="991,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_queueName]" Reference="[str_reference]">
+                    <ui:AddQueueItem.ItemInformation>
+                      <InArgument x:TypeArguments="x:String" x:Key="WORK EMAIL">[CurrentRow("WORK EMAIL").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="NAME">[CurrentRow("NAME").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="EMPLOYEE ID">[CurrentRow("EMPLOYEE ID").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="DESIGNATION">[CurrentRow("DESIGNATION").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="DEPARTMENT">[CurrentRow("DEPARTMENT").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="COMPANY NAME">[CurrentRow("COMPANY NAME").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ADDRESS LINE1">[CurrentRow("ADDRESS LINE1").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ADDRESS LINE2">[CurrentRow("ADDRESS LINE2").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="CITY">[CurrentRow("CITY").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="STATE">[CurrentRow("STATE").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="COUNTRY">[CurrentRow("COUNTRY").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="POSTAL CODE">[CurrentRow("POSTAL CODE").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BANK NAME">[CurrentRow("BANK NAME").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ACCOUNT NUMBER">[CurrentRow("ACCOUNT NUMBER").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="UAN">[CurrentRow("UAN").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PF NUMBER">[CurrentRow("PF NUMBER").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PAN">[CurrentRow("PAN").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="LOP DAYS">[CurrentRow("LOP DAYS").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="MONTHLY GROSS SALARY">[CurrentRow("MONTHLY GROSS SALARY").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BASIC">[CurrentRow("BASIC").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="HOUSE RENT ALLOWANCE">[CurrentRow("HOUSE RENT ALLOWANCE").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="TELEPHONE REIMBURSEMENTS">[CurrentRow("TELEPHONE REIMBURSEMENTS").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BONUS">[CurrentRow("BONUS").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="LEAVE TRAVEL ALLOWANCE">[CurrentRow("LEAVE TRAVEL ALLOWANCE").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="COMMISSION">[CurrentRow("COMMISSION").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="SPECIAL ALLOWANCE">[CurrentRow("SPECIAL ALLOWANCE").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="INCOME TAX">[CurrentRow("INCOME TAX").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="EMPLOYEE PF">[CurrentRow("EMPLOYEE PF").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PROFESSIONAL TAX">[CurrentRow("PROFESSIONAL TAX").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="MONTH">[CurrentRow("MONTH").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="YEAR">[CurrentRow("YEAR").ToString]</InArgument>
+                    </ui:AddQueueItem.ItemInformation>
+                  </ui:AddQueueItem>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ForEachRow>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1067,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Employee Details Queue added successfully.&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="1113,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Missing field exception - Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Ending Loading_Input_File seq - Log Message" sap:VirtualizedContainerService.HintSize="1147,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ended loading input file sequence.&quot;]" />
+  </Sequence>
+</Activity>

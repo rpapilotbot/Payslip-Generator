@@ -1,0 +1,160 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Closing_asanify_website" this:Closing_asanify_website.in_websiteUrl="https://secure.asanify.com/tools/payslip-generator/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_websiteUrl" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>925,895</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Closing_asanify_website_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Closing_asanify_website" sap:VirtualizedContainerService.HintSize="526,830" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bool_elementExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Starting to close asanify website - Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started closing asanify website.&quot;]" />
+    <ui:UiElementExists DisplayName="Element Exists 'Payslip generator page'" Exists="[bool_elementExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="373ca4fa-13db-42cd-b36b-f50307b72f2c" InformativeScreenshot="7d1e90f85824e8777098f4654b44f537" Selector="&lt;html app='chrome.exe' title='Asanify' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' isleaf='1' parentid='PayslipTool' tag='DIV' /&gt;" TimeoutMS="5000">
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:UiElementExists.Target>
+    </ui:UiElementExists>
+    <If Condition="[bool_elementExists]" sap:VirtualizedContainerService.HintSize="484,330" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Asanify" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="430c89fb-ba94-4dae-9b41-776ead5bf10a" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Close'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="430c89fb-ba94-4dae-9b41-776ead5bf10a" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="228, 8, 36, 35" ElementType="Button" FriendlyName="'Close'" FullSelectorArgument="&lt;ctrl name='Asanify - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Asanify' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Asanify - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Asanify' role='page tab' /&gt;&lt;ctrl name='Close' role='push button' automationid='' check:text='Close' /&gt;" Guid="04bbb10d-5c83-4877-b94b-ba77ddcdc9fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAnCAYAAAB9qAq4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFDSURBVFhH7djNSsNAFIZh70sXRS/BQtXrUbS7gl6fUKht1Zr+IUltZOTQBmN4J+QkkpPFfPBBM7N5mDNZNCchTeM6ntaAy9XWPY+n6rZ6gknyhYiytj7iaLVBiK8md3Aye0cM1QS43n4ihmoCjOMdYqgmwDT9RgzVBCghDDUAfSEMNQB9IQy1MrB/dePuHobHp9/ImuxpQxhqZeDo8cmd9S7+IOW3rMmeNoShqkZ8e38ACSzDyVqdEIaqvoMH5HkjnIQwVDUwO7nT40nWDWGoKmB+rPlx1wlhqOqXJD/WDNmJl+RycI13TtZkTxvCUNV38L9CGGoA+kIYagD6QhiqGXA8mSOoWDPg7O0DQcWaAaNltT/wZsD9PkVQsWZASZUPSqZAycu8/DOIOVBSdh87AZTEyc4torWbvi66CfQlAJvFuR81i1ak8QnVMQAAAABJRU5ErkJggg==" InformativeScreenshot="d28090158da047ffc0c08d5f5f1f04a7.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Asanify - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="264, 8, 36, 35" ElementType="Button" FriendlyName="'New Tab'" FullSelectorArgument="&lt;ctrl name='Asanify - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='New Tab' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Asanify - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='New Tab' role='push button' automationid='' check:text='New Tab' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAnCAYAAAB9qAq4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVFhH7ZjRCkBAEEV9mAflVyjil4kXpfzDaMWLppW9s5rVTJ3UjqbT7t4HMiu0SHll47yQZv4nODBrF75eKHbEKH7BiVl7Czgj0R2U2Lk7gTMtJCiQYNV0VLc925MCEsyL8oDrSWGCKP8RdIG4hJ6QDE4UQfcuNyMEu4MoJogCCbowSAaCAxL8gjQFY3ydhc5M+4gldhKdYSFBMUEU/YLLurENLej/w3o+1ZZyQaIduOT0l+o7iOkAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1616, 876" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACkVBMVEX///////7//fn/+/X//v7//vz/9uf/6cP/3aH/1Yz/0YL/3J7/6MH//v3/9+n/36j/y3H/wVX/vUr/vEj/wVT/36f/9+j/7c3/znj/vk7/vUn/7s//+vL/z3z/vEb/vEf/0H7/+vHX3v/N1Pn526n/wlX/wlf33qXD6LrS79D+//7a4P9xi/9mgf+6w/T526X/wlb/wlj43qOq3pxKv0BYw07T79H09v+QpP9Scf9RcP9lgf/626ZJvz8ztic0tyh90Xbx+vHH0f9ffP80tic1tylCvDe+6Lr6+/+VqP+6w/P53Kz/zXb/znn436iE0334/Pfp7f91jv9QcP9ng//S2Pn58ubw6t7w6d7x6t758ujJ6sFOwERbxVLi9eDS2v9ifv9WdP+6xv3n5+ba2tvn5uiw4aw8ujFFvTrJ7MXCzf9Zd/+5xfvj4+LY2NjZ2dnj4uOv4Ks9ujI1tyi55rS9yf9Xdf/k4uSw4Ks6uS6x46zBzP/j4+E8uTC35bPQ2f9hff+5xfzk5ePZ2trl5eaw4as9ujFDvDfF68Lm6v9zjP9hfv/M0/z27evt4+Pu4+Pu5OT37u/E6L9Ivj1YxE7e89z4+v+Rpf9efP+ttvn1t7//jo7/ior/i4v/j4/0v7ec15F/0nj2/PVdev/1s7v/bWz/Wlr/bm/yurKb15FAuzTx9P+Jnv+tt/n/W1v/XFx1zm3t+ezR2f9og/9ee//yu7JBvDdOwEPK7Mf9/f/M1f/ByPv0tLy24a3D6sD8/vz/8vL/iIj/WVn/8PH//f3/ycn/e3v/XV3/4uL/p6f/dXX/YGD/dHT/paX/+vr/4OD/vr7/np7/g4P/goL/nZ3/vb3/39//+fn/+/v/9PT/7+9r68WbAAAB9ElEQVQ4T2OgMmBkYmZmYoFyMAArGzsHJxcXJzcPGy9UCAXw8QsICgkDgZCIgKgYVBAJiEtICksJgYGUsKSENFQYDmRk5SCyECCvoAiVgAIlZRVVqH4QkFJT19DUgsqBgLaOrp6+AVyFlKGRsYmpGVQSCMwtLK2s9WxgKkDytnb2Do5QaQYGJ2crkAp9VZAnhIXVgPIurvZu7lBpBg9PK0tLoAovbwkfIPD1A8m7urr4B0AVBAYFAxVYWoWEhoVHRERGRcfYAeVd7WLjoAriE0AmWFomJiWnAEFqWro9SIF9RiZUQVY2WN4yMSc3Lz8/v6CwCKygOL0EqqC0DK4AKJ9fXgFR4FpZBVVQDTehBqSgAKagtg6qoL4B6obGpvzm5vyW1jaIG9o7oAo6uyC+6O7p7evrnzBx0mSIL6ZMhSqYNh0cDjNmzpo9Z+6cOfPmL3ADGWG3cBFUAUP1YmBIzpi5ZOkyMFi+YiVQhf0qmBMYGFavsbKasXbJ0nXrwWAdWIX9ho1QaSDYtHkLUD9UHqRi68pt23dAJUFg567dexDyYBV79+2HSkLAgYOHoJJgcOjgYagEDBw5euw4wor1x44egUrAAcuJk6dOrwP74vSZsyewZY5z5y9cnHvp8twrV69dhwphgBs3b926eQPKoRNgYAAANCHQI8lekS0AAAAASUVORK5CYII=" InformativeScreenshot="294d369eb64f820d425c2a51679c4fe9.png" Selector="&lt;html app='chrome.exe' title='Asanify' /&gt;" Url="[in_websiteUrl]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Ending to close asanify website - Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ended closing asanify website.&quot;]" />
+  </Sequence>
+</Activity>
